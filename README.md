@@ -1,7 +1,7 @@
 # Hi, I'm Pranav Yeleswarapu 👋
 
 **Data Engineer & AI Systems Engineer**  
-Dublin, Ireland & Bengaluru, India  
+Hyderabad, India 
 [LinkedIn](https://www.linkedin.com/in/pranavyeleswarapu) · [GitHub](https://github.com/Yprnv7) · [Email](mailto:yeleswarapupranav@gmail.com)
 
 ---
