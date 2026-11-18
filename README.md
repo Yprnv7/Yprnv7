@@ -119,6 +119,19 @@ Layout-aware document intelligence engine that reconstructs multi-column reading
 
 ---
 
+### 9. [Sandboxed Code Analyst Agent](https://github.com/Yprnv7/sandboxed-code-analyst-agent)
+*Stateful Data Science Agent, AST Security Sandbox & Self-Healing Execution*
+
+Autonomous data analyst agent that generates, audits, and executes Python / DuckDB data analysis in an isolated micro-sandbox with deterministic AST security guards, resource circuit breakers, and bounded self-repair.
+
+- **Deterministic AST Security Guard:** Statically audits Python syntax trees before execution, blocking forbidden imports (`os`, `sys`, `subprocess`, `socket`, `shutil`), builtins (`eval`, `exec`, `globals`), and reflection dunders (`__subclasses__`, `__mro__`) with **100.0% interception accuracy** in **13.21 µs median latency**.
+- **Micro-Sandbox Execution:** Runs code inside an in-process restricted namespace with execution timeouts, output capturing, and **0.057 ms median startup overhead**.
+- **Stateful REPL Multi-Turn Sessions:** Preserves analytical variables, DataFrames, and models across conversational turns without memory leakage or cold-start serialization overhead.
+- **Automated Self-Healing Error Reflection:** Diagnoses compiler tracebacks (`NameError`, `ZeroDivisionError`, table syntax) and applies automated code repairs across up to 3 bounded iterations with a **100.0% recovery rate** on common defects.
+- **Stack:** Python, FastAPI, DuckDB, NumPy, Pydantic, Hypothesis, Pytest (94% coverage), Ruff, Mypy, Docker Compose.
+
+---
+
 ## 🛠️ Technical Toolkit
 
 | Category | Technologies & Frameworks |
