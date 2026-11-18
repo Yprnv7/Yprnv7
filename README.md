@@ -171,6 +171,19 @@ Ultra-low-latency AI gateway and resilience proxy implemented in Go 1.23 standar
 
 ---
 
+### 13. [Real-Time Feature Store & MLOps Platform](https://github.com/Yprnv7/realtime-feast-mlops-platform)
+*Real-Time Feature Store, Point-in-Time Correct Joins & Distribution Drift Monitoring*
+
+Enterprise-grade feature store and MLOps platform delivering sub-microsecond online inference serving, dual-write streaming ingestion, point-in-time correct historical joins in DuckDB with zero training data leakage, and statistical drift monitoring.
+
+- **Sub-Microsecond Online Serving:** In-memory online feature store achieves **0.88 µs median (p50) lookup latency** (p95 = 0.96 µs) across 10,000 multi-feature entity vectors.
+- **Point-in-Time Correct Joins (DuckDB):** Temporal windowed ASOF joins eliminate lookahead bias / data leakage, joining 1,000 training observations across 20,000 historical mutations in **203.28 ms** with **0.0% data leakage violations** (proven via Hypothesis property testing).
+- **Dual-Write Streaming Pipeline:** Synchronously updates low-latency online memory and appends to the offline temporal log at **5,170.7 events/sec** throughput.
+- **Statistical Feature Drift & TTL Eviction:** Evaluates 10,000 production samples in **9.94 ms** using two-sample **Kolmogorov-Smirnov tests** and **Population Stability Index (PSI)**; evicts stale features during upstream pipeline lags to protect model safety.
+- **Stack:** Python 3.11, DuckDB, NumPy, SciPy, FastAPI, Pydantic, Hypothesis, Pytest (97% coverage), Ruff, Mypy, Docker Compose.
+
+---
+
 ## 🛠️ Technical Toolkit
 
 | Category | Technologies & Frameworks |
