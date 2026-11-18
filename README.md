@@ -158,6 +158,19 @@ Automated data observability and column-level SQL lineage engine that parses tra
 
 ---
 
+### 12. [Go Multi-Model AI Gateway](https://github.com/Yprnv7/go-multi-model-ai-gateway)
+*High-Throughput Concurrent AI Proxy, Circuit Breaking & Model Failover Engine*
+
+Ultra-low-latency AI gateway and resilience proxy implemented in Go 1.23 standard library featuring OpenAI-compatible routing (`/v1/chat/completions`), multi-model failover cascades, thread-safe 3-state circuit breakers, and tenant token-bucket rate limiting.
+
+- **Microsecond Gateway Routing:** Achieves **1.92 Million req/sec** raw routing throughput with a **0.83 µs median (p50) latency** and **100.00 µs p95 latency** across 50 concurrent worker goroutines.
+- **Automated Failover Cascade:** Transparently re-routes in-flight requests across Google Gemini, Anthropic Claude, and OpenAI GPT-4o upon upstream 5xx errors or timeouts with **0.38 µs failover hop overhead**.
+- **3-State Circuit Breaking:** Enforces thread-safe `CLOSED` $\to$ `OPEN` $\to$ `HALF_OPEN` state transitions with cool-down timers to protect degraded providers from thundering herd crashes.
+- **Tenant Isolation & SSE Streaming:** Leaky token-bucket rate limiter prevents noisy-neighbor resource starvation; native `http.Flusher` integration streams Server-Sent Events (SSE) with zero buffering delay.
+- **Stack:** Go 1.23, net/http, sync/atomic, Docker, Docker Compose, GitHub Actions CI (96.6% coverage, zero race conditions).
+
+---
+
 ## 🛠️ Technical Toolkit
 
 | Category | Technologies & Frameworks |
@@ -166,7 +179,7 @@ Automated data observability and column-level SQL lineage engine that parses tra
 | **Data Warehousing & Query Engines** | DuckDB, Apache Parquet, PyArrow, PostgreSQL, ClickHouse, dbt |
 | **Search & Information Retrieval** | BM25Okapi, BGE Embeddings, Cross-Encoders, Reciprocal Rank Fusion, Vector Databases (Qdrant, Redis) |
 | **Data Governance & Reliability** | OpenLineage, Marquez, Hypothesis (Property-Based Testing), Pydantic Contracts, GDPR Article 17 Purges |
-| **Languages & Tooling** | Python, Java 21, SQL, TypeScript / Node.js, Docker, Docker Compose, Linux, Git, GitHub Actions, Maven, Ruff |
+| **Languages & Tooling** | Python, Go 1.23, Java 21, SQL, TypeScript / Node.js, Docker, Docker Compose, Linux, Git, GitHub Actions, Maven, Ruff |
 
 ---
 
