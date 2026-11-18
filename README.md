@@ -66,6 +66,19 @@ Event streaming and columnar lakehouse engine combining Apache Kafka Streams sta
 
 ---
 
+### 5. [Self-Healing Text-to-SQL](https://github.com/Yprnv7/self-healing-text-to-sql)
+*AST-Guarded AI Database Copilot & Self-Correction Engine*
+
+Schema-aware Text-to-SQL execution engine that intercepts SQL queries, enforces deterministic AST security guards (sqlglot), and automatically repairs execution and schema errors through a bounded feedback loop.
+
+- **Deterministic AST Guard (`sqlglot`):** Blocks non-read statements (DDL/DML mutations), stacked injections, and unauthorized functions (`pg_sleep`). Automatically intercepts restricted PII columns (`raw_email`, `phone`) and rewrites them to pseudonymized hashes under GDPR / India DPDP guidelines.
+- **Mandatory Fact-Table Partition Enforcement:** Enforces date/timestamp boundaries on partitioned tables (`fct_orders`), preventing accidental full-lakehouse scans and runaway cloud compute costs.
+- **In-Database Error Diagnostics Loop:** Leverages DuckDB compiler error diagnostics (`Candidate bindings:`, `Did you mean "..."?`) for zero-shot query self-healing across up to 3 bounded attempts without external LLM re-prompting.
+- **BIRD-Style Enterprise Benchmark:** Evaluated across 50 analytical queries spanning Simple, Moderate, and Complex tiers. Boosts overall execution accuracy from **82.98% to 100.0%**, improves Complex query accuracy by **+57.2%**, blocks **100.0%** of malicious injections, and runs with **2.11 ms median (p50) latency** on Apple Silicon.
+- **Stack:** Python, DuckDB, sqlglot, FastAPI, Plotly, Pytest (93% coverage), Ruff, Mypy, Docker Compose.
+
+---
+
 ## 🛠️ Technical Toolkit
 
 | Category | Technologies & Frameworks |
