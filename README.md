@@ -92,6 +92,20 @@ Self-hosted alternative to Langfuse/Braintrust featuring an asynchronous Python 
 
 ---
 
+### 7. [Streaming Iceberg Lakehouse](https://github.com/Yprnv7/streaming-iceberg-lakehouse)
+*Streaming Table-Format Lakehouse with Watermarking, Compaction & Replay*
+
+Streaming table-format lakehouse engine handling 10-minute event-time watermarking, late-arriving event dead-letter routing, transactional schema evolution, Dagster small-file compaction, and 24-hour deterministic raw stream replay.
+
+- **Event-Time Watermarking:** Tracks monotonically advancing watermarks (`max(event_time) - 10m`), preserving temporal ordering and routing late-arriving trade records to DLQ storage with zero loss.
+- **Transactional Schema Evolution:** Full backward-compatible additive evolution (V1 $\rightarrow$ V2 adding `exchange_fee` and `trade_tier`), queryable across disparate physical Parquet generations seamlessly with DuckDB columnar unions.
+- **Small-File Compaction:** Background compaction rewriting fragmented 25 micro-batch Parquet files into single contiguous ZSTD-compressed data files, yielding a **70.2% analytical query speedup** (1.673 ms $\rightarrow$ 0.499 ms).
+- **GDPR Article 17 Purge & Replay Parity:** In-place metadata rewriting to purge user identifiers across snapshots without full-table rewrites; 24-hour event replay achieves **100% SHA-256 cryptographic state checksum parity**.
+- **Measured Ingestion Benchmark:** Sustains **15,231 events/sec** with **0.54 ms median commit latency** on Apple Silicon hardware.
+- **Stack:** Python, Apache Iceberg format, DuckDB, PyArrow, Dagster, FastAPI, Hypothesis, Pytest (98% coverage), Ruff, Mypy, Docker Compose.
+
+---
+
 ## 🛠️ Technical Toolkit
 
 | Category | Technologies & Frameworks |
