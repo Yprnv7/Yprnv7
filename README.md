@@ -106,6 +106,19 @@ Streaming table-format lakehouse engine handling 10-minute event-time watermarki
 
 ---
 
+### 8. [Multimodal Document Intelligence](https://github.com/Yprnv7/multimodal-doc-intelligence)
+*Layout-Aware Document Parsing, Steganography Defense & Spatial Grounded RAG*
+
+Layout-aware document intelligence engine that reconstructs multi-column reading orders, extracts structured tables into Markdown grids, intercepts physical and steganographic prompt injections, and generates pixel-grounded bounding-box citations.
+
+- **Adversarial Prompt Injection Shield:** Intercepts micro-fonts ($< 2.0\text{pt}$), zero-opacity spans ($< 0.05$), low-contrast steganography via WCAG relative luminance ($< 1.15:1$), and system prompt overrides with **100.0% detection accuracy** at **7.56 µs per span**.
+- **Multi-Column Reading Order:** Resolves reading flow across complex multi-column documents and extracts structured tables preserving cell coordinate bounds.
+- **Pixel-Grounded Citations:** Spatial BM25 inverted index generates exact bounding-box coordinates `[p{page}:({ymin},{xmin})-({ymax},{xmax})]` for verifiable audit trails.
+- **Measured Performance Benchmark:** Achieves **92,887 spans/sec (1,857 pages/sec)** parsing throughput and **1.942 ms median (p50) retrieval latency** on local Apple Silicon hardware.
+- **Stack:** Python, FastAPI, Pillow, Pydantic, Hypothesis, Pytest (94% coverage), Ruff, Mypy, Docker Compose.
+
+---
+
 ## 🛠️ Technical Toolkit
 
 | Category | Technologies & Frameworks |
