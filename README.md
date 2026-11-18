@@ -145,6 +145,19 @@ Reverse proxy and security firewall for LLM applications that intercepts prompt 
 
 ---
 
+### 11. [Data Observability & SQL Lineage](https://github.com/Yprnv7/data-observability-sql-lineage)
+*Column-Level SQL Lineage Engine, Statistical Observability & Blast Radius Analysis*
+
+Automated data observability and column-level SQL lineage engine that parses transformation DAGs using `sqlglot`, detects statistical freshness/volume/drift anomalies, and performs downstream blast radius impact analysis.
+
+- **Column-Level Lineage DAG Parser:** Evaluates SQL expressions across CTEs, joins, and aggregations using `sqlglot`, mapping exact column provenance at **1,056.2 queries/sec** parsing throughput.
+- **Blast Radius Impact Analysis:** Forward BFS graph walk traverses 20-hop multi-stage data pipelines in **5.08 µs median latency**, pinpointing all affected downstream tables and executive dashboards.
+- **Statistical Anomaly Monitors:** Combines $O(1)$ SLA freshness alerts, dynamic 3-sigma ($Z \ge 3.0$) row count volume monitors, and dual-gated distribution drift testing (Kolmogorov-Smirnov test + 10-decile PSI).
+- **Incident Dispatcher:** Generates correlated incident payloads linking anomalous source columns to downstream business impacts for automated triage.
+- **Stack:** Python, sqlglot, FastAPI, NumPy, SciPy, Pydantic, Hypothesis, Pytest (94% coverage), Ruff, Mypy, Docker Compose.
+
+---
+
 ## 🛠️ Technical Toolkit
 
 | Category | Technologies & Frameworks |
