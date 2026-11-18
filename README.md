@@ -79,6 +79,19 @@ Schema-aware Text-to-SQL execution engine that intercepts SQL queries, enforces 
 
 ---
 
+### 6. [LLM Evaluation & Observability](https://github.com/Yprnv7/llm-eval-observability)
+*Self-Hosted LLM Tracing, Prompt Diffing & Human-Calibrated Judge Platform*
+
+Self-hosted alternative to Langfuse/Braintrust featuring an asynchronous Python `@observe` SDK, automated judge calibration using Cohen's Kappa, and CI regression gating.
+
+- **Zero-Overhead Asynchronous SDK:** In-process non-blocking ring buffer queue decouples span shipping from the application request thread, adding only **0.015 ms (14.8 µs p95)** instrumentation overhead.
+- **Human-Calibrated Judge ($\kappa$):** Evaluates automated evaluators against 100 hand-graded enterprise RAG and SQL ground-truth traces, computing **Cohen's Kappa ($\kappa = 0.9480$, Almost Perfect Agreement)**, 2x2 confusion matrices, and per-criterion alignment.
+- **CI Regression Gate:** Automated GitHub Actions quality gate that fails pull requests if evaluation scores drop by $>2\%$ or inference costs rise by $>15\%$.
+- **EU AI Act Article 12 Compliance:** Cryptographic audit trail recording model identifiers, prompt SHA-256 hashes, generation parameters, and HMAC digital signatures for every production run.
+- **Stack:** Python, FastAPI, DuckDB, NumPy, SciPy, Pytest (85.5% coverage), Hypothesis, Ruff, Mypy, Docker Compose.
+
+---
+
 ## 🛠️ Technical Toolkit
 
 | Category | Technologies & Frameworks |
