@@ -132,6 +132,19 @@ Autonomous data analyst agent that generates, audits, and executes Python / Duck
 
 ---
 
+### 10. [AI Guardrails & PII Firewall](https://github.com/Yprnv7/ai-guardrails-pii-firewall)
+*Ultra-Low-Latency Security Proxy, GDPR Pseudonymization & Jailbreak Firewall*
+
+Reverse proxy and security firewall for LLM applications that intercepts prompt injections, redacts sensitive personal data under GDPR & India DPDP guidelines using reversible pseudonymization, and normalizes Unicode homoglyphs.
+
+- **Reversible Token Pseudonymization:** Replaces structured PII (Emails, Irish PPSNs, IBANs, Phone numbers, IPs, Credit Cards with Luhn validation) with contextual tokens (`<EMAIL_1>`, `<IBAN_1>`), restoring cleartext upon response generation with **100.0% exact-match accuracy**.
+- **Microsecond In-Line Processing:** Operates at **13.71 µs median latency** (**54,473 docs/sec** throughput), enabling transparent proxying without degrading end-user experience.
+- **Adversarial Jailbreak & Homoglyph Normalizer:** Applies Unicode NFKC normalization and maps Cyrillic/Greek lookalikes to Latin characters, achieving a **100.0% interception rate** across obfuscated prompt injection and roleplay attack vectors.
+- **Compliance & Rate Limiting:** Generates tamper-evident HMAC-SHA256 audit digests for GDPR Article 17 proof-of-erasure verification; token-bucket limiter blocks denial-of-wallet scraping attacks.
+- **Stack:** Python, FastAPI, Pydantic, Hypothesis, Pytest (98% coverage), Ruff, Mypy, Docker Compose.
+
+---
+
 ## 🛠️ Technical Toolkit
 
 | Category | Technologies & Frameworks |
